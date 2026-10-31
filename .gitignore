@@ -1,0 +1,11 @@
+# 가상환경
+.venv/
+venv/
+
+# API 키 / 비밀 설정 (절대 커밋 금지)
+.env
+.streamlit/secrets.toml
+
+__pycache__/
+*.pyc
+.claude/
