@@ -13,13 +13,13 @@ def get_config(key: str, default: str = "") -> str:
     try:
         if key in st.secrets:
             return st.secrets[key]
-    except Exception:  # secrets.toml이 없으면 예외가 난다
+    except Exception: 
         pass
     return os.getenv(key, default)
 
 
 API_BASE = get_config("FRANKFURTER_API_URL", "https://api.frankfurter.dev/v1")
-API_KEY = get_config("FRANKFURTER_API_KEY")  # Frankfurter는 키가 필요 없지만, 프록시/유료 API로 교체할 때를 대비
+API_KEY = get_config("FRANKFURTER_API_KEY")   
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
